@@ -28,13 +28,13 @@ public class GestorCitaServiceImpl implements IGestorCitaService {
 	private IDoctorRepository iDoctorRepository;
 
 	@Override
-	public void agendar(String numeroCita, LocalDateTime fechaCita, BigDecimal costoCita, String lugarCita,
+	public void agendar(String numeroCita, LocalDateTime fechaCita, BigDecimal valorCita, String lugarCita,
 			String cedulaDoctor, String cedulaPaciente) {
 
 		CitaMedica cita = new CitaMedica();
 		cita.setNumero(numeroCita);
 		cita.setFecha(fechaCita);
-		cita.setCosto(costoCita);
+		cita.setValor(valorCita);
 		cita.setLugar(lugarCita);
 
 		Doctor d = this.iDoctorRepository.buscarPorCedula(cedulaDoctor);
@@ -53,7 +53,7 @@ public class GestorCitaServiceImpl implements IGestorCitaService {
 		CitaMedica cita = this.iCitaMedicaRepository.buscarPorNumero(numeroCita);
 		cita.setDiagnostico(diagnostico);
 		cita.setReceta(receta);
-		cita.setFechaControl(fechaControl);
+		cita.setFechaProximaCita(fechaControl);
 
 		this.iCitaMedicaRepository.actualizar(cita);
 

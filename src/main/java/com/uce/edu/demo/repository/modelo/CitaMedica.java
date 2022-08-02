@@ -23,16 +23,16 @@ public class CitaMedica {
 	@Column(name = "cime_id")
 	private Integer id;
 
-	@Column(name = "cime_numero_cita")
+	@Column(name = "cime_numero")
 	private String numero;
 
 	@Column(name = "cime_fecha_cita")
 	private LocalDateTime fecha;
 
-	@Column(name = "cime_costo_cita")
-	private BigDecimal costo;
+	@Column(name = "cime_valor")
+	private BigDecimal valor;
 
-	@Column(name = "cime_lugar_cita")
+	@Column(name = "cime_lugar")
 	private String lugar;
 
 	@Column(name = "cime_diagnostico")
@@ -41,8 +41,8 @@ public class CitaMedica {
 	@Column(name = "cime_receta")
 	private String receta;
 
-	@Column(name = "cime_fecha_control")
-	private LocalDateTime fechaControl;
+	@Column(name = "cime_fecha_proxima_cita")
+	private LocalDateTime fechaProximaCita;
 
 	@ManyToOne
 	@JoinColumn(name = "paci_id")
@@ -54,9 +54,9 @@ public class CitaMedica {
 
 	@Override
 	public String toString() {
-		return "CitaMedica [id=" + id + ", numero=" + numero + ", fecha=" + fecha + ", costo=" + costo + ", lugar="
-				+ lugar + ", diagnostico=" + diagnostico + ", receta=" + receta + ", fechaControl=" + fechaControl
-				+ ", paciente=" + paciente + ", doctor=" + doctor + "]";
+		return "CitaMedica [id=" + id + ", numero=" + numero + ", fecha=" + fecha + ", valor=" + valor + ", lugar="
+				+ lugar + ", diagnostico=" + diagnostico + ", receta=" + receta + ", fechaProximaCita="
+				+ fechaProximaCita + ", paciente=" + paciente + ", doctor=" + doctor + "]";
 	}
 
 	// SET Y GET
@@ -84,12 +84,12 @@ public class CitaMedica {
 		this.fecha = fecha;
 	}
 
-	public BigDecimal getCosto() {
-		return costo;
+	public BigDecimal getValor() {
+		return valor;
 	}
 
-	public void setCosto(BigDecimal costo) {
-		this.costo = costo;
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 
 	public String getLugar() {
@@ -116,12 +116,12 @@ public class CitaMedica {
 		this.receta = receta;
 	}
 
-	public LocalDateTime getFechaControl() {
-		return fechaControl;
+	public LocalDateTime getFechaProximaCita() {
+		return fechaProximaCita;
 	}
 
-	public void setFechaControl(LocalDateTime fechaControl) {
-		this.fechaControl = fechaControl;
+	public void setFechaProximaCita(LocalDateTime fechaProximaCita) {
+		this.fechaProximaCita = fechaProximaCita;
 	}
 
 	public Paciente getPaciente() {

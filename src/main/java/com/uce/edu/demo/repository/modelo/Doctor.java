@@ -37,20 +37,20 @@ public class Doctor {
 	@Column(name = "doct_numero_consultorio")
 	private String numeroConsultorio;
 
-	@Column(name = "doct_titulo")
-	private String titulo;
+	@Column(name = "doct_codigo_senescyt")
+	private String codigoSenescyt;
 
-	@Column(name = "doct_salario")
-	private String salario;
+	@Column(name = "doct_genero")
+	private String genero;
 
 	@OneToMany(mappedBy = "doctor")
-	private List<CitaMedica> citasMedicas;
+	private List<CitaMedica> citas;
 
 	@Override
 	public String toString() {
 		return "Doctor [id=" + id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", fechaNacimiento=" + fechaNacimiento + ", numeroConsultorio=" + numeroConsultorio + ", titulo="
-				+ titulo + ", salario=" + salario + "]";
+				+ ", fechaNacimiento=" + fechaNacimiento + ", numeroConsultorio=" + numeroConsultorio
+				+ ", codigoSenescyt=" + codigoSenescyt + ", genero=" + genero + ", citas=" + citas + "]";
 	}
 
 	// SET Y GET
@@ -102,28 +102,28 @@ public class Doctor {
 		this.numeroConsultorio = numeroConsultorio;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getCodigoSenescyt() {
+		return codigoSenescyt;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setCodigoSenescyt(String codigoSenescyt) {
+		this.codigoSenescyt = codigoSenescyt;
 	}
 
-	public String getSalario() {
-		return salario;
+	public String getGenero() {
+		return genero;
 	}
 
-	public void setSalario(String salario) {
-		this.salario = salario;
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
-	public List<CitaMedica> getCitasMedicas() {
-		return citasMedicas;
+	public List<CitaMedica> getCitas() {
+		return citas;
 	}
 
-	public void setCitasMedicas(List<CitaMedica> citasMedicas) {
-		this.citasMedicas = citasMedicas;
+	public void setCitas(List<CitaMedica> citas) {
+		this.citas = citas;
 	}
 
 }

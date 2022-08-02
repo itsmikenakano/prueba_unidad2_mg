@@ -8,7 +8,7 @@ import com.uce.edu.demo.repository.modelo.CitaSencilla;
 
 public interface IGestorCitaService {
 
-	public void agendar(String numeroCita, LocalDateTime fechaCita, BigDecimal costoCita, String lugarCita,
+	public void agendar(String numeroCita, LocalDateTime fechaCita, BigDecimal valorCita, String lugarCita,
 			String cedulaDoctor, String cedulaPaciente);
 
 	public void actualizarPorNumeroCita(String numeroCita, String Diagnostico, String receta,
