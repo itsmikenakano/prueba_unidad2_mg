@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.uce.edu.demo.repository.modelo.CitaSencilla;
+import com.uce.edu.demo.repository.modelo.PacienteSencillo;
 
 public interface IGestorCitaService {
 
@@ -15,5 +16,7 @@ public interface IGestorCitaService {
 			LocalDateTime fechaProximaCita);
 
 	public List<CitaSencilla> buscarPorFechaCosto(LocalDateTime fecha, BigDecimal costo);
+	
+	public List<PacienteSencillo> buscarPorFechaGenero(LocalDateTime fecha, String genero);
 
 }

@@ -1,6 +1,10 @@
 package com.uce.edu.demo.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import com.uce.edu.demo.repository.modelo.Paciente;
+import com.uce.edu.demo.repository.modelo.PacienteSencillo;
 
 public interface IPacienteService {
 
@@ -9,6 +13,8 @@ public interface IPacienteService {
 	public Paciente buscar(Integer id);
 
 	public Paciente buscarPorCedula(String cedula);
+	
+	public List<PacienteSencillo> buscarPorFechaGenero(LocalDateTime fecha, String genero);
 
 	public void actualizar(Paciente paciente);
 

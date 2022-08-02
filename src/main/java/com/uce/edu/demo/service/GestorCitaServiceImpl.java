@@ -14,6 +14,7 @@ import com.uce.edu.demo.repository.modelo.CitaMedica;
 import com.uce.edu.demo.repository.modelo.CitaSencilla;
 import com.uce.edu.demo.repository.modelo.Doctor;
 import com.uce.edu.demo.repository.modelo.Paciente;
+import com.uce.edu.demo.repository.modelo.PacienteSencillo;
 
 @Service
 public class GestorCitaServiceImpl implements IGestorCitaService {
@@ -63,6 +64,12 @@ public class GestorCitaServiceImpl implements IGestorCitaService {
 	public List<CitaSencilla> buscarPorFechaCosto(LocalDateTime fecha, BigDecimal costo) {
 
 		return this.iCitaMedicaRepository.buscarPorFechaCosto(fecha, costo);
+	}
+
+	@Override
+	public List<PacienteSencillo> buscarPorFechaGenero(LocalDateTime fecha, String genero) {
+
+		return this.iPacienteRepository.buscarPorFechaGenero(fecha, genero);
 	}
 
 }
